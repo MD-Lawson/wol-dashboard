@@ -1,26 +1,26 @@
 import React from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+onButtonClick(e){
+  console.log(e.target.id)
+  var res = axios.get('http://localhost:8081/wake')
+}
+
+  render(){
+    return (
+      <div className="App">
+        <body>
+          <button onClick={this.onButtonClick} id="20:DE:20:DE:20:DE">Home PC</button>
+          <button onClick={this.onButtonClick} id="21:DE:20:DE:20:DE">Laptop</button>
+        </body>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
