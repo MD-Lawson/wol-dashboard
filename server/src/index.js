@@ -35,7 +35,9 @@ app.use(morgan('combined'));
 //   }));
 //   res.send(qs);
 // });
-
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '../../public/index.html');
+});
 app.get('/wake', (req, res) => {
     console.log("ping")
     wol.wake("E0:D5:5E:2E:1A:F5", function(error){
