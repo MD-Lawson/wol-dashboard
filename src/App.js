@@ -7,7 +7,7 @@ class App extends React.Component {
 
 onButtonClick(e){
   console.log(e.target.id)
-  var res = axios.get('http://localhost:8081/wake')
+  var res = axios.get('/wake')
 }
 
   render(){
